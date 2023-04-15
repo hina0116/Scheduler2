@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :tasks, dependent: :destroy
+  has_many :diaries, dependent: :destroy
   has_one_attached :profile_image
 
   def get_profile_image(width, height)
