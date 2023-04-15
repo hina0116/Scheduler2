@@ -1,0 +1,12 @@
+<% @task.each do |task| %>
+<tr>
+    <td>
+      <%= link_to task_path(task.id) do %>
+        <p><%= task.name %></p>
+      <% end %>
+    </td>
+    <td><%= task.content %></td>
+    <td><%= link_to "編集", edit_task_path(task) %></td>
+    <td><%= link_to "削除", task_path(task), method: :delete %></td>
+  </tr>
+<% end %>
