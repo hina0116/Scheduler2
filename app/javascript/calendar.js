@@ -2,13 +2,14 @@ import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from "@fullcalendar/list";
 
 document.addEventListener('turbolinks:load', function() {
   var calendarEl = document.getElementById('calendar');
 
   /*global FullCalendar*/
   var calendar = new Calendar(calendarEl, {
-    plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin],
+    plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin],
 
       locale: 'ja',
       timeZone: 'Asia/Tokyo',
@@ -17,7 +18,7 @@ document.addEventListener('turbolinks:load', function() {
       headerToolbar: {
         start: 'prev,next today',
         center: 'title',
-        end: 'dayGridMonth,timeGridWeek,timeGridDay'
+        end: 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
       },
       expandRows: true,
       stickyHeaderDates: true,
@@ -25,7 +26,8 @@ document.addEventListener('turbolinks:load', function() {
         today: '今日',
         month: '月',
         week: '週',
-        day: '日'
+        day: '日',
+        list: 'リスト'
       },
       selectable: true,
       select: function (info) {
@@ -33,7 +35,6 @@ document.addEventListener('turbolinks:load', function() {
         const eventName = prompt("イベントを入力してください");
 
         if (eventName) {
-            // イベントの追加
             calendar.addEvent({
                 title: eventName,
                 start: info.start,
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', function() {
             });
         }
       },
+      businessHours: true,
       editable: true,
       dayMaxEvents: true,
       allDayText: '',
