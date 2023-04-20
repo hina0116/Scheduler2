@@ -8,12 +8,11 @@ class EventsController < ApplicationController
     if @event.save
       respond_to do |format|
         format.html { redirect_to root_path }
-        format.js  #create.js.erbを探してその中の処理を実行する
+        format.js 
       end
     else
       respond_to do |format|
         format.js {render partial: "error" }
-        #登録にエラーが起きたときはerror.js.erbを実行する
       end
     end
   end
@@ -25,6 +24,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-      params.require(:event).permit(:title, :start, :finish)
+      params.require(:event).permit(:title, :content, :start, :end)
   end
 end
