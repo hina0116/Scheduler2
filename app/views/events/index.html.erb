@@ -1,1 +1,15 @@
 <div id='calendar'></div>
+
+<%= form_with url: root_path do |f| %>
+  <%#= f.hidden_field : # 日付 %>
+  <%= f.text_field :title, value: 'デフォルトバリュー' %>
+
+  <%= f.submit %>
+<% end %>
+
+<script>
+//   submitボタンを押したら、入力項目を取得してvalueの値を書換
+// ①submitボタンを押したらイベント発火
+// ②入力したDOMの取得
+// ③
+</script>

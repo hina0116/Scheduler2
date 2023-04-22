@@ -43,7 +43,6 @@ document.addEventListener('turbolinks:load', function() {
             });
         }
       },
-      businessHours: true,
       editable: true,
       dayMaxEvents: true,
       allDayText: '',
