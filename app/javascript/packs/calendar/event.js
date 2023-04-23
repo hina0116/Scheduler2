@@ -44,15 +44,6 @@ document.addEventListener('turbolinks:load', function() {
           url:  '/events/new.js',
           data: {year: year, month: month, day: day}
         }).done(function (res) {
-          // $('.modal-body').html(res);
-
-          // $('#event_start_1i').val(year);
-          // $('#event_start_2i').val(month);
-          // $('#event_start_3i').val(day);
-
-          // $('#event_end_1i').val(year);
-          // $('#event_end_2i').val(month);
-          // $('#event_end_3i').val(day);
 
           // $('#modal').fadeIn();
 
@@ -61,24 +52,17 @@ document.addEventListener('turbolinks:load', function() {
         });
       },
 
-      eventClick: function(info){
-            //表示されたイベントをクリックしたときのイベント(詳しくは次回の記事へ)
+      eventClick: function(event) {
+        var title = prompt('予定を更新してください:');
+          if(title && title!=""){
+            event.title = title;
+            $('#calendar').fullCalendar('updateEvent', event);
+          }else{
+            $('#calendar').fullCalendar("removeEvents", event.id);
+          }
       },
 
       selectable: true,
-      // select: function (info) {
-
-      //   const eventName = prompt("イベントを入力してください");
-
-      //   if (eventName) {
-      //       calendar.addEvent({
-      //           title: eventName,
-      //           start: info.start,
-      //           end: info.end,
-      //           allDay: true,
-      //       });
-      //   }
-      // },
       editable: true,
       dayMaxEvents: true,
       allDayText: '',

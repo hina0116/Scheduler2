@@ -62,3 +62,4 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
