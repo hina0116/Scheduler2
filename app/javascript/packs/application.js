@@ -7,8 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
-require("../calendar")
+import jquery from "jquery"
+import "popper.js";
+import "bootstrap";
+import "../stylesheets/application"
+window.$ = window.jQuery = jquery;
+require("./calendar/event.js")
 
 Rails.start()
 Turbolinks.start()
