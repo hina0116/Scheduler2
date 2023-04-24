@@ -15,3 +15,18 @@
     </div>
   </div>
 </div>
+<div id="edit-modal" class="modal hide" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="form_edit">
+                    <%= render partial: "form_edit",locals: {event: @event} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

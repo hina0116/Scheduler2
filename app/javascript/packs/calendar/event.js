@@ -5,6 +5,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from "@fullcalendar/list";
 
 document.addEventListener('turbolinks:load', function() {
+
   var calendarEl = document.getElementById('calendar');
 
   /*global FullCalendar*/
@@ -51,15 +52,44 @@ document.addEventListener('turbolinks:load', function() {
           alert("failed");
         });
       },
-
+      events: '/events.json',
       eventClick: function(event) {
-        var title = prompt('予定を更新してください:');
-          if(title && title!=""){
-            event.title = title;
-            $('#calendar').fullCalendar('updateEvent', event);
-          }else{
-            $('#calendar').fullCalendar("removeEvents", event.id);
-          }
+        const year  = event.event.start.getFullYear();
+        const month = (event.event.start.getMonth() + 1);
+        const day   = event.event.start.getDate();
+
+        $.ajax({
+          type: 'GET',
+          url:  '/events/'+ event.event.id + '/edit',
+          data: {year: year, month: month, day: day}
+        }).done(function (res) {
+
+          // $('#modal').fadeIn();
+
+        }).fail(function (result) {
+          alert("failed");
+        });
+        // var title = prompt('予定を更新してください:');
+        //   if(title && title!=""){
+        //     event.title = title;
+        //     $('#calendar').fullCalendar('updateEvent', event);
+        //   }else{
+
+
+        //     $.ajax({
+        //       url:'/events/' + event.event.id,
+        //       type:'DELETE',
+        //       success: function(response) {
+        //         $('#calendar').fullCalendar("removeEvents", event.event.id);
+        //       },
+        //       error: function(xhr) {
+        //         alert(xhr.responseText);
+        //       }
+        //     });
+
+
+
+        //   }
       },
 
       selectable: true,
@@ -67,8 +97,7 @@ document.addEventListener('turbolinks:load', function() {
       dayMaxEvents: true,
       allDayText: '',
       height: "auto",
-      nowIndicator: true,
-      events: '/events.json'
+      nowIndicator: true
     });
 
 
