@@ -1,15 +1,29 @@
 class DiariesController < ApplicationController
-  # def create
-  #   @event = Event.find(params[:event_id])
-  #   @comment = current_user.diary.new(diary_params)
-  #   @comment.event_id = event.id
-  #   @comment.save
-  #   redirect_to prequest.referer
-  # end
+  def new
+    @diary = Diary.new
+  end
+  
+  def create
+    @diary = Diary.new(diary_params)
+    @diary.user_id = current_user.id
+    @diary.save
+    redirect_to post_images_path
+  end
 
-  # private
+  def index
+  end
 
-  # def diary_params
-  #   params.require(:post_comment).permit(:comment)
-  # end
+  def show
+  end
+
+  def destroy
+  end
+
+  
+  # 投稿データのストロングパラメータ
+  private
+
+  def diary_params
+    params.require(:diary).permit(:comment)
+  end
 end
