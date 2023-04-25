@@ -19,9 +19,7 @@ class EventsController < ApplicationController
         format.js
       end
     else
-      respond_to do |format|
-        format.js {render partial: "error" }
-      end
+      redirect_to root_path, alert: '時間設定が間違っています！'
     end
   end
 
@@ -31,7 +29,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    
+
     @event = Event.find(params[:id])
   end
 

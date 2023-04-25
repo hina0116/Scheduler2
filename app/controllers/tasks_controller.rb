@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to request.referer
+      redirect_to tasks_path
     else
       render :new
     end

@@ -7,7 +7,7 @@ class DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
     if @diary.save
-      redirect_to request.referer
+      redirect_to diaries_path
     else
       render :new
     end
@@ -22,19 +22,19 @@ class DiariesController < ApplicationController
   end
 
   def edit
-    @diary = Diary.find(params[:id])
+    # @diary = Diary.find(params[:id])
   end
 
   def update
-    @diary = Diary.find(params[:id])
-    @diary.update(diary_params)
-    redirect_to diary_path(diaries.id)
+    # @diary = Diary.find(params[:id])
+    # @diary.update(diary_params)
+    # redirect_to diary_path(diaries.id)
   end
 
   def destroy
     @diary = Diary.find(params[:id])
     @diary.destroy
-    redirect_to request.referer //帰ってくると消去してるからidないよっていわれるよ
+    redirect_to diaries_path
   end
 
   private
