@@ -1,0 +1,12 @@
+<h1>editing</h1>
+<%= form_with model: @diary, url: diary_path(@diary.id), method: :patch do |f| %>
+
+  <h4>title</h4>
+  <%= f.text_field :name %>
+
+  <h4></h4>
+  <%= f.text_area :content %>
+
+  <%= f.submit '保存' %>
+
+<% end %>

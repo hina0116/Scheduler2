@@ -34,7 +34,7 @@ class DiariesController < ApplicationController
   def destroy
     @diary = Diary.find(params[:id])
     @diary.destroy
-    redirect_to request.referer
+    redirect_to request.referer //帰ってくると消去してるからidないよっていわれるよ
   end
 
   private
