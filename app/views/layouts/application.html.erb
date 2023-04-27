@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <title>Scheduler2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,31 +13,43 @@
   </head>
 
   <body>
-    <header>
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to 'スケジューラー', root_path %>
-        </li>
-        <li>
-          <%= link_to 'マイページ', user_path(current_user.id) %>
-          </li>
-        <li>
-          <%= link_to 'メモ', tasks_path %>
-        </li>
-        <li>
-          <%= link_to '日記 ', diaries_path %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-      <% end %>
+    <header class="border border-dark">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex align-items-end flex-column bd-highlight mb-3" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto bd-highlight">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to 'スケジューラー', root_path, class: "btn btn-outline-secondary" %>
+              </li>
+              <li>
+                <%= link_to 'マイページ', user_path(current_user.id), class: "btn btn-outline-secondary" %>
+                </li>
+              <li>
+                <%= link_to 'メモ', tasks_path, class: "btn btn-outline-secondary" %>
+              </li>
+              <li>
+                <%= link_to '日記 ', diaries_path, class: "btn btn-outline-secondary" %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary" %>
+              </li>
+              <li>
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary" %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <% if notice %>
