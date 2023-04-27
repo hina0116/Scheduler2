@@ -1,7 +1,7 @@
+<h1>メモ</h1>
 <div>
-  <p>title：<%= @task.name %></p>
-  <p>text：<%= @task.content %></p>
-  <p>creating：<%= @task.created_at.strftime('%Y/%m/%d') %></p>
+  <p>タイトル：<%= @task.name %></p>
+  <p>内容：<%= @task.content %></p>
+  <p>作成日：<%= @task.created_at.strftime('%Y/%m/%d') %></p>
   <%= link_to "edit", edit_task_path(@task.id) %>
 </div>
-

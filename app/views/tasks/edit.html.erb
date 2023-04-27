@@ -1,12 +1,10 @@
-<h1>editing</h1>
+<h1>メモ修正</h1>
 <%= form_with model: @task, url: task_path(@task.id), method: :patch do |f| %>
 
-  <h4>title</h4>
+  <h4>タイトル</h4>
   <%= f.text_field :name %>
 
-  <h4>text</h4>
+  <h4>内容</h4>
   <%= f.text_area :content %>
-
-  <%= f.submit '保存' %>
-
+  <%= f.submit '更新' %>
 <% end %>

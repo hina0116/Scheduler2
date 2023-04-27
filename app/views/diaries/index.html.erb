@@ -1,9 +1,14 @@
+<h1>日記一覧</h1>
+<div>
+  <%= link_to '日記 ', diaries_path, class="btn btn-primary" %>
+</div>
+
 <% @diary.each do |diary| %>
 <tr>
   <td><%= diary.comment %></td>
   <td>
     <%= link_to diary_path(diary.id) do %>
-      <p>投稿日：<%= diary.created_at.strftime('%Y/%m/%d') %></p>
+      <p>作成日：<%= diary.created_at.strftime('%Y/%m/%d') %></p>
     <% end %>
   </td>
 </tr>
