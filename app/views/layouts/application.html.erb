@@ -25,16 +25,16 @@
             <ul class="navbar-nav ml-auto bd-highlight">
             <% if user_signed_in? %>
               <li>
-                <%= link_to 'スケジューラー', root_path, class: "btn btn-outline-secondary" %>
+                <%= link_to 'スケジューラー', root_path, class: "btn btn-outline-primary" %>
               </li>
               <li>
-                <%= link_to 'マイページ', user_path(current_user.id), class: "btn btn-outline-secondary" %>
+                <%= link_to 'マイページ', user_path(current_user.id), class: "btn btn-outline-primary" %>
                 </li>
               <li>
-                <%= link_to 'メモ', tasks_path, class: "btn btn-outline-secondary" %>
+                <%= link_to 'メモ', tasks_path, class: "btn btn-outline-primary" %>
               </li>
               <li>
-                <%= link_to '日記 ', diaries_path, class: "btn btn-outline-secondary" %>
+                <%= link_to '日記 ', diaries_path, class: "btn btn-outline-primary" %>
               </li>
               <li>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
