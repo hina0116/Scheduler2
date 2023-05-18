@@ -1,4 +1,13 @@
 <h1>日記</h1>
+
+  <% if @diary.errors.any? %>
+    <ul>
+      <% @diary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form_with model: @diary do |f| %>
     <h4> </h4>
       <%= f.text_area  :comment %>
