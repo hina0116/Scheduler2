@@ -35,6 +35,10 @@ document.addEventListener('turbolinks:load', function() {
         day: '日',
         list: 'リスト'
       },
+      dayHeaderFormat: function (date) {
+        const days = ["日", "月", "火", "水", "木", "金", "土"];
+        return days[date.date.marker.getDay()];
+        },
       dateClick: function(info){
         const year  = info.date.getFullYear();
         const month = (info.date.getMonth() + 1);
