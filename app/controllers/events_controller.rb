@@ -8,7 +8,6 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.start = date
     @event.end = date
-    @task = Task.new
   end
 
   def create
@@ -21,19 +20,11 @@ class EventsController < ApplicationController
     else
       redirect_to root_path, alert: '時間設定が間違っています！'
     end
-    @task = Task.new(task_params)
-    @task.user_id = current_user.id
-    if @task.save
-      redirect_to tasks_path
-    else
-      render :new
-    end
   end
 
   def index
     @events = Event.all
     @event = Event.new
-    @task = Task.all
   end
 
   def edit
