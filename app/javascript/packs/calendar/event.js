@@ -19,6 +19,10 @@ document.addEventListener('turbolinks:load', function() {
         meridiem: false
       },
       timeZone: 'Asia/Tokyo',
+      locale: "ja",
+      dayCellContent: function(arg){
+		return arg.date.getDate();
+	   },
       firstDay: 0,
     　navLinks: true,
       headerToolbar: {

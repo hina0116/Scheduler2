@@ -1,15 +1,21 @@
-<h1>メモ一覧</h1>
-<div>
-  <%= link_to '新規登録', new_task_path, class: "btn btn-outline-success" %>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1>メモ一覧</h1>
+      <div>
+        <%= link_to '新規登録', new_task_path, class: "btn btn-outline-success" %>
+      </div>
 
-<% @task.each do |task| %>
-  <p>
-      <%= link_to task_path(task.id) do %>
-        <p><%= task.name %></p>
+      <% @task.each do |task| %>
+        <p>
+            <%= link_to task_path(task.id) do %>
+              <p><%= task.name %></p>
+            <% end %>
+        </p>
+          <p><%= task.content %></p>
+          <p><%= link_to "編集", edit_task_path(task), class: "btn btn-outline-secondary" %>
+              <%= link_to "削除", task_path(task), method: :delete, class: "btn btn-outline-danger" %></p>
       <% end %>
-  </p>
-    <p><%= task.content %></p>
-    <p><%= link_to "編集", edit_task_path(task), class: "btn btn-outline-secondary" %>
-        <%= link_to "削除", task_path(task), method: :delete, class: "btn btn-outline-danger" %></p>
-<% end %>
+    </div>
+  </div>
+</div>
