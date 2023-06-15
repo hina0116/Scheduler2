@@ -14,7 +14,7 @@ class DiariesController < ApplicationController
   end
 
   def index
-    @diary = Diary.all
+    @diary = Diary.page(params[:page])
   end
 
   def show

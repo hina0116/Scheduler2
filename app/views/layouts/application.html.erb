@@ -25,7 +25,7 @@
             <ul class="navbar-nav ml-auto bd-highlight">
             <% if user_signed_in? %>
               <li>
-                <%= link_to 'スケジュール  ', root_path, class: "btn btn-outline-primary" %>
+                <%= link_to 'スケジュール', root_path, class: "btn btn-outline-primary" %>
               </li>
               <li>
                 <%= link_to 'マイページ', user_path(current_user.id), class: "btn btn-outline-primary" %>
