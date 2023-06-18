@@ -20,9 +20,6 @@ document.addEventListener('turbolinks:load', function() {
       },
       timeZone: 'Asia/Tokyo',
       locale: "ja",
-      dayCellContent: function(arg){
-		return arg.date.getDate();
-	   },
       firstDay: 0,
     　navLinks: true,
       headerToolbar: {
@@ -77,27 +74,6 @@ document.addEventListener('turbolinks:load', function() {
         }).fail(function (result) {
           alert("failed");
         });
-        // var title = prompt('予定を更新してください:');
-        //   if(title && title!=""){
-        //     event.title = title;
-        //     $('#calendar').fullCalendar('updateEvent', event);
-        //   }else{
-
-
-        //     $.ajax({
-        //       url:'/events/' + event.event.id,
-        //       type:'DELETE',
-        //       success: function(response) {
-        //         $('#calendar').fullCalendar("removeEvents", event.event.id);
-        //       },
-        //       error: function(xhr) {
-        //         alert(xhr.responseText);
-        //       }
-        //     });
-
-
-
-        //   }
       },
 
       selectable: true,
@@ -107,8 +83,6 @@ document.addEventListener('turbolinks:load', function() {
       height: "auto",
       nowIndicator: true
     });
-
-
 
   calendar.render();
 
