@@ -13,3 +13,75 @@
  *= require_tree .
  *= require_self
  */
+
+  :root {
+  --primary-color: #1B1E24;
+  --secondary-color: #1B1E24;
+  --font-color: #1B1E24;
+  --bg-color: #fff;
+  --heading-color: #1B1E24;
+  }
+  
+  [data-theme="dark"] {
+    --primary-color: #fff;
+    --secondary-color: #fff;
+    --font-color: #fff;
+    --bg-color: #1B1E24;
+    --heading-color: #fff;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+  }
+  
+  /*.container{*/
+  /*  position: relative;*/
+  /*  display: flex;*/
+  /*  justify-content: center;*/
+  /*  align-items: center;*/
+  /*  text-align: center;*/
+  /*  height: 97vh;*/
+  /*  .content h1{*/
+  /*    color: var(--primary-color);*/
+  /*    font-family: "Dosis",sans-serif;*/
+  /*    font-size: 5rem;*/
+  /*  }*/
+  /*  .content p{*/
+  /*    color: var(--primary-color);*/
+  /*    font-family: "Dosis",sans-serif;*/
+  /*    font-size: 2rem;*/
+  /*  }*/
+  /*}*/
+  
+  
+  .header{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    .moon, .sun{
+      width: 34px;
+      cursor: pointer;
+      transition: .5s all ease-in-out;
+    }
+    .sun:hover{
+      animation: sun_rotate 1s infinite;
+    }
+    .moon:hover{
+      transform: scale(1.1);
+    }
+    .hide{
+      display: none;
+    }
+  }
+  
+  
+  // Animations
+  
+  @keyframes sun_rotate{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
