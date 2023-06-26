@@ -21,7 +21,7 @@ ActiveStorage.start()
 const lightMode = document.querySelector('.sun');
 const darkMode = document.querySelector('.moon');
 
-
+/*global localStorage*/
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
 lightMode.onclick = function(){
