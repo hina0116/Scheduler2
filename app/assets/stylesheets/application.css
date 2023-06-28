@@ -21,7 +21,7 @@
   --bg-color: #fff;
   --heading-color: #1B1E24;
   }
-
+  
   [data-theme="dark"] {
     --primary-color: #fff;
     --secondary-color: #fff;
@@ -29,11 +29,11 @@
     --bg-color: #1B1E24;
     --heading-color: #fff;
   }
-
+  
   body {
     background-color: var(--bg-color);
   }
-
+  
   /*.container{*/
   /*  position: relative;*/
   /*  display: flex;*/
@@ -52,8 +52,8 @@
   /*    font-size: 2rem;*/
   /*  }*/
   /*}*/
-
-
+  
+  
   .header{
     position: absolute;
     top: 10px;
@@ -73,10 +73,10 @@
       display: none;
     }
   }
-
-
-  col3,col4 Animations
-
+  
+  
+  // Animations
+  
   @keyframes sun_rotate{
     0%{
       transform: rotate(0deg);
