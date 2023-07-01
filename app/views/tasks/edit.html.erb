@@ -3,14 +3,14 @@
     <div class="col-lg-8">
       <h1>メモ修正</h1>
       <%= form_with model: @task, url: task_path(@task.id), method: :patch do |f| %>
-      
         <h4>タイトル</h4>
         <%= f.text_field :name %>
-      
+
         <h4>内容</h4>
         <%= f.text_area :content %>
-        <%= f.submit '更新', class:"btn btn-sm btn-success" %>
+        <p><%= f.submit '更新', class:"btn btn-sm btn-success" %></p>
       <% end %>
+      <p><%= link_to '一覧に戻る', tasks_path %></p>
     </div>
   </div>
 </div>
